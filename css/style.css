@@ -895,6 +895,70 @@ a:hover { color: var(--red-dark); }
   margin: 0;
 }
 
+/* Event schedule (per-day list) */
+.event-schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.event-day {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.375rem 1.125rem;
+  box-shadow: var(--shadow);
+}
+
+.event-day-title {
+  font-family: var(--font-caps);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin: 0 0 0.875rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.event-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dotted var(--border);
+}
+
+.event-list li:last-child { border-bottom: none; }
+
+.event-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+
+.event-time {
+  font-family: var(--font-caps);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* Tournament table */
 .tournament-table {
   width: 100%;
