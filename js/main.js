@@ -113,6 +113,6 @@ loadIncludes().then(() => {
   markActiveNav();
   setCopyrightYear();
   initNav();
-  initFadeIn();
+  // initFadeIn();  // disabled -- entrance fade-ins removed for now
   initContactForm();
 });

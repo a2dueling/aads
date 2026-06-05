@@ -768,6 +768,8 @@ a:hover { color: var(--red-dark); }
 }
 
 /* ── Fade-in on scroll ──────────────────────────────────────────────────── */
+/* Scroll fade-ins disabled -- trying the page with no entrance animations.
+   To restore, un-comment the block below (and re-enable initFadeIn in js/main.js).
 .fade-in {
   opacity: 0;
   transform: translateY(22px);
@@ -782,6 +784,7 @@ a:hover { color: var(--red-dark); }
 .fade-in-delay-1 { transition-delay: 0.1s; }
 .fade-in-delay-2 { transition-delay: 0.2s; }
 .fade-in-delay-3 { transition-delay: 0.3s; }
+*/
 
 /* ── Inner Page Header ──────────────────────────────────────────────────── */
 .page-header {
