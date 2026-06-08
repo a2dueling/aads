@@ -69,10 +69,15 @@ function initContactForm() {
   const contactForm = document.getElementById('contact-form');
   if (!contactForm) return;
 
+  const btn = contactForm.querySelector('.form-submit');
+  const success = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+  const resetLink = document.getElementById('form-reset');
+  const originalText = btn.textContent;
+
   contactForm.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = contactForm.querySelector('.form-submit');
-    const originalText = btn.textContent;
+    errorMsg.hidden = true;
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
@@ -82,21 +87,25 @@ function initContactForm() {
         body: new FormData(contactForm),
         headers: { 'Accept': 'application/json' }
       });
+      if (!res.ok) throw new Error('Submission failed: ' + res.status);
 
-      if (res.ok) {
-        contactForm.style.display = 'none';
-        document.getElementById('form-success').classList.add('visible');
-      } else {
-        btn.textContent = 'Something went wrong — please try again';
-        btn.disabled = false;
-      }
+      contactForm.style.display = 'none';
+      success.classList.add('visible');
     } catch {
-      btn.textContent = 'Something went wrong — please try again';
+      errorMsg.hidden = false;
+      btn.textContent = originalText;
       btn.disabled = false;
-      setTimeout(() => {
-        btn.textContent = originalText;
-      }, 4000);
     }
+  });
+
+  resetLink.addEventListener('click', e => {
+    e.preventDefault();
+    contactForm.reset();
+    success.classList.remove('visible');
+    contactForm.style.display = '';
+    errorMsg.hidden = true;
+    btn.textContent = originalText;
+    btn.disabled = false;
   });
 }
 

@@ -250,12 +250,17 @@
             <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
           </div>
           <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+          <p class="form-error" id="form-error" hidden>
+            Sorry — our contact service is temporarily unavailable. Please email us directly at
+            <a href="mailto:a2dueling@gmail.com">a2dueling@gmail.com</a>.
+          </p>
         </form>
 
         <div class="form-success" id="form-success">
           <div class="success-icon">✓</div>
           <h3>Message sent!</h3>
           <p>Thanks for reaching out. We'll get back to you shortly.</p>
+          <p class="form-reset-wrap"><a href="#" id="form-reset">Send another message</a></p>
         </div>
       </div>
     </div>

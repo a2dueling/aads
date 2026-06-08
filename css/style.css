@@ -676,6 +676,14 @@ a:hover { color: var(--red-dark); }
 }
 
 .form-success p { color: var(--text-mid); font-size: 0.9375rem; }
+.form-reset-wrap { margin-top: 1rem; }
+
+.form-error {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--red-dark);
+  font-size: 0.9375rem;
+}
 
 /* ── Footer ─────────────────────────────────────────────────────────────── */
 .site-footer {
